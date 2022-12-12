@@ -6,8 +6,8 @@ import { useRouter } from 'next/router';
 
 export default function NewChannel(){
 
-    const apikey = process.env.NEXT_PUBLIC_API_KEY;
-    const apisecret = process.env.NEXT_PUBLIC_API_SECRET;
+    const apikey = process.env.API_KEY;
+    const apisecret = process.env.API_SECRET;
     const router = useRouter();
 
     let currenticon = defaultPFP();
