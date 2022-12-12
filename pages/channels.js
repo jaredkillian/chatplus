@@ -29,7 +29,7 @@ export default function Channels({global, channels}) {
     setncVisible(!vis);
   }
 
-  const getUserData = fetch("http://localhost:3000/api/users", {
+  const getUserData = fetch("https://chatplus-cv.vercel.app/api/users", {
   method: "GET",
   headers: 
   {
@@ -124,7 +124,7 @@ export default function Channels({global, channels}) {
 
 export async function getServerSideProps(){
   try{
-    const channels = await fetch("http://localhost:3000/api/channels", {
+    const channels = await fetch("https://chatplus-cv.vercel.app/api/channels", {
       method: "GET",
       headers: 
       {
