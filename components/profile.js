@@ -21,7 +21,7 @@ export default function Profile(){
             color: val,
             pfp: ''
         };
-        const res = await fetch("https://chatplus-cv.vercel.app//api/updater", {
+        const res = await fetch("https://chatplus-cv.vercel.app/api/updater", {
             method: "POST",
             body: JSON.stringify(obj),
             headers: 
@@ -56,7 +56,7 @@ export default function Profile(){
                 color: `${currentcolor}`,
                 pfp: `${profile}`
             };
-            const res = await fetch("https://chatplus-cv.vercel.app//api/updater", {
+            const res = await fetch("https://chatplus-cv.vercel.app/api/updater", {
                 method: "POST",
                 body: JSON.stringify(obj),
                 headers: 
