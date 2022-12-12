@@ -5,8 +5,8 @@ import styles from "../styles/Profile.module.css"
 
 export default function Profile(){
 
-    const apikey = process.env.NEXT_PUBLIC_API_KEY;
-    const apisecret = process.env.NEXT_PUBLIC_API_SECRET;
+    const apikey = process.env.API_KEY;
+    const apisecret = process.env.API_SECRET;
 
     const currentusername = currentUser(state => state.username);
     const currentpfp = currentUser(state => state.profilePic);
@@ -21,7 +21,7 @@ export default function Profile(){
             color: val,
             pfp: ''
         };
-        const res = await fetch("http://localhost:3000/api/updater", {
+        const res = await fetch("https://chatplus-cv.vercel.app//api/updater", {
             method: "POST",
             body: JSON.stringify(obj),
             headers: 
@@ -56,7 +56,7 @@ export default function Profile(){
                 color: `${currentcolor}`,
                 pfp: `${profile}`
             };
-            const res = await fetch("http://localhost:3000/api/updater", {
+            const res = await fetch("https://chatplus-cv.vercel.app//api/updater", {
                 method: "POST",
                 body: JSON.stringify(obj),
                 headers: 
