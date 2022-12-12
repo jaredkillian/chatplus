@@ -1,0 +1,345 @@
+@font-face {
+    font-family: Nova;
+    src: url('./Nova.otf');
+}
+
+@font-face {
+    font-family: Nova_Bold;
+    src: url('./Nova-Bold.otf');
+}
+
+.container {
+    padding: 0 2rem;
+}
+
+.main {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color:hsla(20,0%,0%,1);
+    background-image:
+    radial-gradient(at 61% 42%, hsla(323,85%,67%,1) 0px, transparent 50%),
+    radial-gradient(at 52% 16%, hsla(272,88%,66%,1) 0px, transparent 50%),
+    radial-gradient(at 55% 72%, hsla(167,72%,71%,1) 0px, transparent 50%),
+    radial-gradient(at 35% 7%, hsla(218,0%,0%,1) 0px, transparent 50%),
+    radial-gradient(at 40% 53%, hsla(223,79%,72%,1) 0px, transparent 50%),
+    radial-gradient(at 74% 95%, hsla(229,0%,0%,1) 0px, transparent 50%),
+    radial-gradient(at 91% 10%, hsla(5,0%,0%,1) 0px, transparent 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.chatcontainer{
+    width: 50vw;
+    height: 75vh;
+    border-radius: 25px;
+    background: white;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    display: inline-grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% ;
+}
+
+.roominfo{
+    position: relative;
+    padding: 10px;
+    z-index: 4;
+    grid-area: 1 / 1 / 1 / 6;
+    box-shadow: 0px 2px 2px 1px rgb(165, 165, 165);
+    line-height: 25px;
+}
+
+.memberlist{
+    display: flex;
+    justify-content: center;
+    z-index: 3;
+    box-shadow: -2px 2px 2px 1px rgb(165, 165, 165);
+    grid-area: 2 / 5 / 11 / 5;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.memberlist::-webkit-scrollbar-track {
+    border: 1px solid transparent;
+    padding: 2px 0;
+    background-color: transparent;
+}
+
+.memberlist::-webkit-scrollbar {
+    width: 10px;
+}
+
+.memberlist::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(105, 105, 105, 0.3);
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.479);
+}
+
+.chatbox{
+    z-index: 2;
+    grid-area: 10 / 1 / 10 / 5;
+}
+
+.messagebox{
+    display: flex;
+    flex-direction: column;
+    vertical-align: bottom;
+    background: rgb(218, 218, 218);
+    box-shadow: inset 0px -2px 2px 1px rgb(165, 165, 165);
+    grid-area: 2 / 1 / 10 / 5;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.messagebox::-webkit-scrollbar-track {
+    border: 1px solid transparent;
+    padding: 2px 0;
+    background-color: transparent;
+}
+
+.messagebox::-webkit-scrollbar {
+    width: 10px;
+}
+
+.messagebox::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(105, 105, 105, 0.3);
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.479);
+}
+
+.title{
+    float: left;
+    font-family: Nova_Bold;
+    font-size: 1.5vw;
+}
+
+.description{
+    font-family: Nova;
+    font-size: 1vw;
+}
+
+.profileimg{
+    float: right;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.memberimg{
+    margin-right: 10px;
+}
+
+.member{
+    float: right;
+    font-family: Nova;
+    font-size: 1vw;
+    line-height: 10px;
+}
+
+.messageimg{
+    margin: 0;
+    grid-area: 1 / 1 / 2 / 1;
+}
+
+.membername{
+    line-height: 30px;
+    font-family: Nova_Bold;
+    font-size: 1.25vw;
+    margin: 0;
+    grid-area: 1 / 2 / 1 / 2;
+    background-size: 10%;
+}
+
+.time{
+    line-height: 30px;
+    font-family: Nova;
+    font-size: 0.75vw;
+    color: gray;
+    justify-self: center;
+    margin: 0;
+    grid-area: 1 / 2 / 1 / 2;
+}
+
+.message{
+    line-height: 15px;
+    font-family: Nova;
+    font-size: 0.8vw;
+    margin: 0;
+    grid-area: 2 / 2 / 2 / 2;
+}
+
+.messagecontainer{
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 7% 93%;
+    grid-template-rows: 50% 50%;
+}
+
+.textbox{
+    width: 95%;
+    grid-area: 1 / 1 / 1 / 1;
+    margin-left: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    border-radius: 15px;
+    outline: none;
+    border: 1px solid rgb(124, 124, 124);
+    font-family: Nova;
+    font-size: 0.75vw;
+    transition: border 1s ease;
+}
+
+.textbox:focus{
+    border: 1px solid black;
+}
+
+.submit{
+    grid-area: 1 / 2 / 1 / 2;
+    cursor: pointer;
+    width: 2vw;
+    height: 2vw;
+    padding: 0;
+    border: none;
+    background: transparent;
+}
+
+.chatboxcontainer{
+    align-self: center;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 94% 6%;
+    grid-template-rows: 100%;
+    align-items: center;
+}
+
+.profile{
+    padding-right: 10px;
+    padding-top: 10px;
+    grid-area: 1 / 2 / 1 / 6;
+    z-index: 10;
+}
+
+.cicontainer{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    width: 15vw;
+    height: 35vh;
+    background: rgb(255, 255, 255);
+    border-radius: 15px;
+    transform: translateY(8vh);
+}
+
+.hoverdiv{
+    position: absolute;
+    top: 5%;
+    left: 35%;
+    width: 5vw;
+    height: 5vw;
+}
+
+.hoverdiv:hover{
+    filter: brightness(50%);
+    cursor: pointer;
+}
+
+.hoverdiv:hover .hovertext{
+    color: rgb(0, 0, 0);
+}
+
+.chanicon{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.hovertext{
+    position: absolute;
+    font-family: Nova;
+    font-size: 1vw;
+    text-align: center;
+    transform: translateX(-4.25vw) translateY(3vh);
+    color: transparent;
+}
+
+.chaniconinput{
+    display: none;
+}
+
+.channame{
+    width: 100%;
+    text-align: center;
+    background: none;
+    margin-bottom: 20%;
+    font-family: Nova_Bold;
+    font-size: 1.5vw;
+    color: black;
+    border: none;
+    outline: none;
+}
+
+.channame::placeholder{
+    color: black;
+}
+
+.deletechan{
+    position: absolute;
+    top: 80%;
+    width: 35%;
+    margin-left: 10%;
+    font-family: Nova;
+    font-size: 0.75vw;
+    background: transparent;
+    outline: none;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    transition: border 0.5s ease, color 0.5s ease, background 0.5s ease;
+}
+
+.deletechan:hover{
+    border: 1px solid rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+    background: red;
+}
+
+.savechange{
+    position: absolute;
+    width: 35%;
+    top: 80%;
+    margin-left: 55%;
+    font-family: Nova;
+    font-size: 0.75vw;
+    background: transparent;
+    outline: none;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 20px;
+    transition: border 0.5s ease, color 0.5s ease, background 0.5s ease;
+}
+
+.savechange:hover{
+    border: 1px solid rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
+    background: rgb(7, 151, 2);
+}
+
+.usersinput{
+    position: absolute;
+    transform: translateX(1.6vw) translateY(-5vh);
+    border: none;
+    outline: none;
+    font-family: Nova;
+    font-size: 0.75vw;
+    background: transparent;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    padding: 2px 12px;
+    transition: border-bottom 0.1s ease;
+}

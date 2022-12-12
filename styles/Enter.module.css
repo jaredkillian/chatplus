@@ -1,0 +1,268 @@
+@font-face {
+font-family: Moon;
+src: url('./Moon\ Light.otf');
+}
+
+@font-face {
+    font-family: Nova;
+    src: url('./Nova.otf');
+}
+
+@font-face {
+    font-family: Nova_Bold;
+    src: url('./Nova-Bold.otf');
+}
+
+@keyframes fadein {
+from { opacity: 0; }
+to   { opacity: 1; }
+}
+
+.container {
+    padding: 0 2rem;
+}
+
+.main {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color:hsla(20,0%,0%,1);
+    background-image:
+    radial-gradient(at 61% 42%, hsla(323,85%,67%,1) 0px, transparent 50%),
+    radial-gradient(at 52% 16%, hsla(272,88%,66%,1) 0px, transparent 50%),
+    radial-gradient(at 55% 72%, hsla(167,72%,71%,1) 0px, transparent 50%),
+    radial-gradient(at 35% 7%, hsla(218,0%,0%,1) 0px, transparent 50%),
+    radial-gradient(at 40% 53%, hsla(223,79%,72%,1) 0px, transparent 50%),
+    radial-gradient(at 74% 95%, hsla(229,0%,0%,1) 0px, transparent 50%),
+    radial-gradient(at 91% 10%, hsla(5,0%,0%,1) 0px, transparent 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .chatcontainer{
+    width: 50vw;
+    height: 75vh;
+    border-radius: 25px;
+    background: white;
+    backdrop-filter: blur(10px);
+    box-shadow: 5px 5px 4px 1px rgba(128, 128, 128, 0.322);
+    display: flex;
+    justify-content: center;
+  }
+
+.header{
+    margin: 0;
+    width: 100%;
+    height: 10%;
+    position: absolute;
+    text-align: center;
+    font-family: Moon;
+    font-size: 3vw;
+}
+
+.channels{
+    position: absolute;
+    top: 17%;
+    width: 100%;
+    height: 80%;
+    font-family: Nova;
+    font-size: 1vw;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.channels::-webkit-scrollbar-track {
+    border: 1px solid transparent;
+    padding: 2px 0;
+    background-color: transparent;
+}
+
+.channels::-webkit-scrollbar {
+    width: 10px;
+}
+
+.channels::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(105, 105, 105, 0.3);
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.479);
+}
+
+.channel{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 6% 65% 25%;
+    grid-template-rows: 40%;
+    grid-auto-flow: column;
+    transition: color 0.5s ease;
+}
+
+.channel:hover .title{
+    cursor: pointer;
+    color: rgb(61, 174, 226);
+}
+
+.icon{
+    grid-column: 1;
+    vertical-align: sub;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transition: border 0.25s ease;
+}
+
+.title{
+    grid-column: 2;
+    color: black;
+    text-decoration: none;
+    font-family: Nova_Bold;
+    font-size: 1.5vw;
+    transition: color 0.25s ease;
+}
+
+.description{
+    grid-column: 2;
+}
+
+.profileimg{
+    border-radius: 50%;
+    position: absolute;
+    width: 3vw;
+    height: 3vw;
+    transform: translateX(21.5vw) translateY(-11vh);
+}
+
+.profileimg:hover{
+    cursor: pointer;
+}
+
+.newchannelcontainer{
+    border-radius: 25px;
+    width: 20vw;
+    height: 60vh;
+    position: absolute;
+    background: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    z-index: -1;
+    padding-top: 2vh;
+    backdrop-filter: blur(10px);
+    transform: translateX(-42.5vw);
+}
+
+.hoverdiv{
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    align-content: center;
+    width: 5.5vw;
+    height: 5.5vw;
+    z-index: 2;
+}
+
+.hoverdiv:hover{
+    filter: brightness(50%);
+    cursor: pointer;
+}
+
+.hoverdiv:hover .hovertext{
+    color: rgb(0, 0, 0);
+}
+
+.chanicon{
+    border-radius: 50%;
+    z-index: 1;
+    min-width: 5.5vw;
+    min-height: 5.5vw;
+}
+
+.iconinput{
+    display: none;
+}
+
+.hovertext{
+    position: absolute;
+    pointer-events: none;
+    font-family: Moon;
+    font-size: 1vw;
+    z-index: 5;
+    text-align: center;
+    transform: translateX(-4.7vw) translateY(4vh);
+    color: transparent;
+}
+
+.channelform{
+    position: absolute;
+    transform: translateY(15vh);
+    text-align: center;
+}
+
+.label{
+    font-family: Moon;
+    font-size: 0.75vw;
+}
+  
+.nameinput{
+    break-inside: auto;
+    border: none;
+    outline: none;
+    font-family: Nova;
+    font-size: 0.75vw;
+    background: transparent;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    padding: 2px 12px;
+    transition: border-bottom 0.1s ease;
+}
+
+.nameinput:focus{
+    border-bottom: 2px solid rgb(126, 126, 126);
+}
+
+.usersinput{
+    border: none;
+    outline: none;
+    font-family: Nova;
+    font-size: 0.75vw;
+    background: transparent;
+    border-bottom: 2px solid rgb(0, 0, 0);
+    padding: 2px 12px;
+    transition: border-bottom 0.1s ease;
+}
+
+.usersinput:focus{
+    border-bottom: 2px solid rgb(126, 126, 126);
+}
+
+.submit{
+    background: transparent;
+    width: 60%;
+    font-family: Moon;
+    font-size: 1vw;
+    border-radius: 25px;
+    transition: background 0.5s ease, color 0.5s ease;
+}
+  
+.submit:hover{
+    background: rgb(0, 0, 0);
+    color: white;
+}
+
+.errormsg{
+    position: relative;
+    font-family: Moon;
+    font-size: 1vw;
+    color: red;
+    opacity: 0;
+}
+
+.backbutton{
+    position: absolute;
+    transform: translateX(41vw) translateY(1vh);
+}
+
+.backbutton2{
+    position: absolute;
+    transform: translateX(-42vw) translateY(1vh) rotate(180deg);
+}

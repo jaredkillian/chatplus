@@ -1,0 +1,185 @@
+@font-face {
+  font-family: Moon;
+  src: url('./Moon\ Light.otf');
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.container {
+  padding: 0 2rem;
+}
+
+.main {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color:hsla(20,0%,0%,1);
+  background-image:
+  radial-gradient(at 61% 42%, hsla(323,85%,67%,1) 0px, transparent 50%),
+  radial-gradient(at 52% 16%, hsla(272,88%,66%,1) 0px, transparent 50%),
+  radial-gradient(at 55% 72%, hsla(167,72%,71%,1) 0px, transparent 50%),
+  radial-gradient(at 35% 7%, hsla(218,0%,0%,1) 0px, transparent 50%),
+  radial-gradient(at 40% 53%, hsla(223,79%,72%,1) 0px, transparent 50%),
+  radial-gradient(at 74% 95%, hsla(229,0%,0%,1) 0px, transparent 50%),
+  radial-gradient(at 91% 10%, hsla(5,0%,0%,1) 0px, transparent 50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chatcontainer{
+  width: 50vw;
+  height: 75vh;
+  border-radius: 25px;
+  background: white;
+  backdrop-filter: blur(10px);
+  box-shadow: 5px 5px 4px 1px rgba(128, 128, 128, 0.322);
+  display: flex;
+  justify-content: center;
+}
+
+.heading{
+  font-size: 6vw;
+  font-family: Moon;
+  transform: translateY(10vh);
+}
+
+.buttons{
+  position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 50%;
+  height: 25%;
+  top: 50%;
+}
+
+.button{
+  width: 10vw;
+  height: 6vh;
+  position: relative;
+  font-family: Moon;
+  font-size: 1vw;
+  background: transparent;
+  border-radius: 30px;
+  border: 1px solid rgb(0, 0, 0);
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+.button:hover{
+  background: rgb(0, 0, 0);
+  color: white;
+}
+
+.form{
+  position: absolute;
+  width: 50%;
+  height: 60%;
+  top: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.label{
+  font-family: Moon;
+  font-size: 0.75vw;
+}
+
+.nameinput, .passinput{
+  border: none;
+  outline: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.75vw;
+  background: transparent;
+  border-bottom: 2px solid rgb(0, 0, 0);
+  padding: 2px 12px;
+  transition: border-bottom 0.1s ease;
+}
+
+.nameinput:focus{
+  border-bottom: 2px solid rgb(190, 190, 190);
+}
+
+.passinput:focus{
+  border-bottom: 2px solid rgb(190, 190, 190);
+}
+
+.submit{
+  background: transparent;
+  width: 60%;
+  font-family: Moon;
+  font-size: 1vw;
+  border-radius: 25px;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+.submit:hover{
+  background: rgb(0, 0, 0);
+  color: white;
+}
+
+.passinfo{
+  opacity: 0;
+  transform: translateY(2vh) translateX(11.5vw);
+  padding: 5px;
+  width: 10vw;
+  height: 12.5vh;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 0.65vw;
+  background: transparent;
+  border: 2px solid black;
+  border-radius: 10px;
+  position: absolute;
+  transition: opacity 0.5s ease;
+}
+
+.leftarrow{
+  opacity: 0;
+  width: 0; 
+  height: 0; 
+  border-top: 0.5vw solid transparent; 
+  border-bottom: 0.5vw solid transparent;
+  border-right: 0.5vw solid rgb(0, 0, 0);
+  border-left: none;
+  position: absolute;
+  transform: translateY(2vh) translateX(6vw);
+  transition: opacity 0.5s ease;
+}
+
+.success{
+  opacity: 0;
+  position: absolute;
+  transform: translateY(15vh);
+  font-family: Moon;
+  font-size: 0.8vw;
+  color: rgb(0, 175, 0);
+  transition: opacity 0.5s ease;
+}
+
+.failure{
+  opacity: 0;
+  position: absolute;
+  transform: translateY(15vh);
+  font-family: Moon;
+  font-size: 0.8vw;
+  color: rgb(175, 0, 0);
+  transition: opacity 0.5s ease;
+}
+
+.backbutton{
+  margin: 0;
+  padding: 0;
+  border: none;
+  width: 1.5vw;
+  height: 4vh;
+  background: transparent;
+  position: absolute;
+  transform: translateX(-24vw) translateY(1vh);
+}
