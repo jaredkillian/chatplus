@@ -60,7 +60,7 @@ export default function NewChannel(){
                     admin: currentusername,
                     roomID: id
                 }
-                const newChan = await fetch("https://chatplus-cv.vercel.app//api/channels", {
+                const newChan = await fetch("https://chatplus-cv.vercel.app/api/channels", {
                     method: "POST",
                     body: JSON.stringify(obj),
                     headers: {
@@ -73,7 +73,7 @@ export default function NewChannel(){
                 let obj2 = {
                     id: id
                 }
-                const messages = await fetch("https://chatplus-cv.vercel.app//api/messages", {
+                const messages = await fetch("https://chatplus-cv.vercel.app/api/messages", {
                     method: "POST",
                     body: JSON.stringify(obj2),
                     headers: {
