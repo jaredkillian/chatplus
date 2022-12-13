@@ -44,7 +44,7 @@ export default function SignUp({users}) {
               nameColor: 1,
               profilePic: `${defaultPFP()}`
             }
-            const res = await fetch("https://chatplus-cv.vercel.app/api/users", {
+            const res = await fetch("https://chatplus.vercel.app/api/users", {
               method: "POST",
               body: JSON.stringify(obj),
               headers: 
