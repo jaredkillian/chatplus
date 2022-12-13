@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Room.module.css'
-import { useState } from 'react';
+import { useState, useLayoutEffect } from 'react';
 import currentUser from '../lib/profile';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
@@ -285,6 +285,10 @@ export default function Room() {
       scrollToBottom();
     }, 1000)
   }, []);
+  
+  useLayoutEffect(() => {
+    scrollToBottom();
+  }, [])
 
   return (
     <div className={styles.container}>
