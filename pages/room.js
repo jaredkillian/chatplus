@@ -268,12 +268,20 @@ export default function Room() {
         color: message.color
       }
       setMessages(message => [...message, messageobj]);
+      scrollToBottom();
     }
+  }
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({behavior: "instant"});
   }
 
   useEffect(() => {
     populateData();
     popMessages();
+    setTimeout(() => {
+      scrollToBottom();
+    }, 1000)
   }, []);
 
   return (
