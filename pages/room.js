@@ -36,7 +36,7 @@ export default function Room() {
   }
 
   const populateData = async () => {
-    const res = await fetch("https://chatplus-cv.vercel.app/api/channels", {
+    const res = await fetch("https://chatplus.vercel.app/api/channels", {
       method: "GET",
       headers: {
         "Content-Type":
@@ -59,7 +59,7 @@ export default function Room() {
       }
     }
 
-    const users = await fetch("https://chatplus-cv.vercel.app/api/users", {
+    const users = await fetch("https://chatplus.vercel.app/api/users", {
       method: "GET",
       headers: {
         "Content-Type":
@@ -86,7 +86,7 @@ export default function Room() {
     }
     setMembers(currentmembers);
 
-    const messagedata = await fetch("https://chatplus-cv.vercel.app/api/messages", {
+    const messagedata = await fetch("https://chatplus.vercel.app/api/messages", {
       method: "GET",
       headers: {
         "Content-Type":
@@ -133,7 +133,7 @@ export default function Room() {
         icon: `${pfp}`,
         color: `${color}`
       }
-      const req = await fetch("https://chatplus-cv.vercel.app/api/messages", {
+      const req = await fetch("https://chatplus.vercel.app/api/messages", {
         method: "POST",
         body: JSON.stringify(obj),
         headers: {
@@ -165,7 +165,7 @@ export default function Room() {
       id: id
     }
     console.log(obj);
-    const deletechan = await fetch("https://chatplus-cv.vercel.app/api/updatechannel", {
+    const deletechan = await fetch("https://chatplus.vercel.app/api/updatechannel", {
       method: "POST",
       body: JSON.stringify(obj),
       headers: {
@@ -198,7 +198,7 @@ export default function Room() {
         name: `${name}`,
         members: memberarray
       }
-      const updatechan = await fetch("https://chatplus-cv.vercel.app/api/updatechannel", {
+      const updatechan = await fetch("https://chatplus.vercel.app/api/updatechannel", {
         method: "POST",
         body: JSON.stringify(obj),
         headers: {
@@ -233,7 +233,7 @@ export default function Room() {
           image: `${icon}`,
           name: `${name}`
         }
-        const updatechan = await fetch("https://chatplus-cv.vercel.app/api/updatechannel", {
+        const updatechan = await fetch("https://chatplus.vercel.app/api/updatechannel", {
           method: "POST",
           body: JSON.stringify(obj),
           headers: {
