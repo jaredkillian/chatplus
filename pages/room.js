@@ -5,9 +5,9 @@ import { useState } from 'react';
 import currentUser from '../lib/profile';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
-import Profile from '../components/profile';
 import { SHA256 } from 'crypto-js';
 import clientPromise from '../lib/mongodb';
+import * as Realm from "realm-web"
 
 export default function Room() {
 
@@ -252,11 +252,20 @@ export default function Room() {
   }
   
 
-  useEffect(async () => {
+  const popMessages = async () => {
+    const user = await app.logIn(Realm.Credentials.anonymous());
+    const mongodb = app.currentUser.mongoClient("mongodb-atlas");
+    const collection = mongodb.db("ChatAppDB").collection("messages");
+    for await (const change of collection.watch()){
+      let last = Object.keys(change.updateDescription.updatedFields)[0];
+      let message = change.updateDescription.updatedFields[last];
+      setMessages(messages => [...messages, message]);
+    }
+  }
+
+  useEffect(() => {
     populateData();
-    const client = await clientPromise;
-    const db = client.db("ChatAppDB");
-    db.collection("messages").watch().on('change', () =>{populateData});
+    popMessages();
   }, []);
 
   return (
