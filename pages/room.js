@@ -27,6 +27,7 @@ export default function Room() {
   const [civisible, setciVisible] = useState(false);
   const apikey = process.env.API_KEY;
   const apisecret = process.env.API_SECRET;
+  const messagesEndRef = useRef(null);
 
   const router = useRouter();
   const id = router.query.id;
