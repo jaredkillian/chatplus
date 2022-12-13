@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import Profile from '../components/profile';
 import { SHA256 } from 'crypto-js';
+import clientPromise from '../lib/mongodb';
 
 export default function Room() {
 
@@ -251,8 +252,11 @@ export default function Room() {
   }
   
 
-  useEffect(() => {
+  useEffect(async () => {
     populateData();
+    const client = await clientPromise;
+    const db = client.db("ChatAppDB");
+    db.collection("messages").watch().on('change', () =>{populateData});
   }, []);
 
   return (
