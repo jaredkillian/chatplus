@@ -6,7 +6,6 @@ import currentUser from '../lib/profile';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { SHA256 } from 'crypto-js';
-import clientPromise from '../lib/mongodb';
 import * as Realm from "realm-web"
 
 export default function Room() {
