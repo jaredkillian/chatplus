@@ -9,6 +9,8 @@ import { SHA256 } from 'crypto-js';
 import * as Realm from "realm-web"
 
 export default function Room() {
+  
+  const app = new Realm.App({id: "chatplus-iwcoj"});
 
   const [username, setUser] = useState(currentUser(state => state.username));
   const [pfp, setProfile] = useState(currentUser(state => state.profilePic));
