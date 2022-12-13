@@ -281,10 +281,11 @@ export default function Room() {
   useEffect(() => {
     populateData();
     popMessages();
-    setTimeout(() => {
-      scrollToBottom();
-    }, 5000)
   }, []);
+  
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
 
   return (
     <div className={styles.container}>
