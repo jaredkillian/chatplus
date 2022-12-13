@@ -5,6 +5,7 @@ import { useState } from 'react';
 import currentUser from '../lib/profile';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+import { useRef } from 'react';
 import { SHA256 } from 'crypto-js';
 import * as Realm from "realm-web"
 
