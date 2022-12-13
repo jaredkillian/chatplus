@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Room.module.css'
-import { useState, useLayoutEffect } from 'react';
+import { useState } from 'react';
 import currentUser from '../lib/profile';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
@@ -283,12 +283,8 @@ export default function Room() {
     popMessages();
     setTimeout(() => {
       scrollToBottom();
-    }, 1000)
+    }, 5000)
   }, []);
-  
-  useLayoutEffect(() => {
-    scrollToBottom();
-  }, [])
 
   return (
     <div className={styles.container}>
