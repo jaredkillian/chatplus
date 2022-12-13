@@ -257,8 +257,10 @@ export default function Room() {
     const collection = mongodb.db("ChatAppDB").collection("messages");
     for await (const change of collection.watch()){
       let last = Object.keys(change.updateDescription.updatedFields)[0];
-      let message = change.updateDescription.updatedFields[last];
-      setMessages(messages => [...messages, message]);
+      let message = JSON.stringify(change.updateDescription.updatedFields[last]);
+      let allmessages = messages;
+      allmessages.push(message);
+      setMessages(allmessages);
     }
   }
 
