@@ -42,7 +42,7 @@ export default function Profile(){
             formData.append("api_key", apikey);
             let time = Math.round((new Date()).getTime() / 1000);
             formData.append("timestamp", time);
-            let sig = `timestamp=${time}${apisecret}`;
+            let sig = "timestamp=" + `${time}` + `${apisecret}`;
             let signature = SHA256(sig);
             formData.append("signature", signature);
             const upload = await fetch(`https://api.cloudinary.com/v1_1/dfh2ouxw4/auto/upload`, {
