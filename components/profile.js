@@ -5,8 +5,8 @@ import styles from "../styles/Profile.module.css"
 
 export default function Profile(){
 
-    const apikey = process.env.NEXT_PUBLIC_API_KEY;
-    const apisecret = process.env.NEXT_PUBLIC_API_SECRET;
+    const apikey = process.env.API_KEY;
+    const apisecret = process.env.API_SECRET;
 
     const currentusername = currentUser(state => state.username);
     const currentpfp = currentUser(state => state.profilePic);
