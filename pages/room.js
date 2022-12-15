@@ -26,8 +26,8 @@ export default function Room() {
   const currentmembers = new Array();
   var messagearray = new Array();
   const [civisible, setciVisible] = useState(false);
-  const apikey = process.env.API_KEY;
-  const apisecret = process.env.API_SECRET;
+  const apikey = process.env.NEXT_PUBLIC_API_KEY;
+  const apisecret = process.env.NEXT_PUBLIC_API_SECRET;
   const messagesEndRef = useRef(null);
 
   const router = useRouter();
